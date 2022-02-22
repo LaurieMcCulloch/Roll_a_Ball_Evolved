@@ -9,4 +9,5 @@ Followed the Basic [Roll a Ball](https://learn.unity.com/project/roll-a-ball) tu
 2. Move the player
 3. Move the camera
 4. Setup the play area
-5. Created Collectables
+5. Created collectables
+6. Detected collisions with colllectables
