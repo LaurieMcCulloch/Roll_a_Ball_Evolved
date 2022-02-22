@@ -11,3 +11,5 @@ Followed the Basic [Roll a Ball](https://learn.unity.com/project/roll-a-ball) tu
 4. Setup the play area
 5. Created collectables
 6. Detected collisions with colllectables
+7. Display score and text
+8. Build the game
