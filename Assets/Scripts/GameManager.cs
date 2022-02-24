@@ -31,13 +31,14 @@ public class GameManager : MonoBehaviour
             case GameState.MainMenu:
                 HandleMainMenu();
                 break;
-            case GameState.PlayLevel:                
+            case GameState.PlayLevel:
+                HandlePlayLevel();
                 break;
-            case GameState.CompleteLevel:
-                break;
-            case GameState.FailLevel:
-                break;
+            case GameState.LevelCompleted:
+                HandleLevelCompleted();
+                break;            
             case GameState.GameOver:
+                HandleGameOver();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -50,6 +51,18 @@ public class GameManager : MonoBehaviour
     {
 
     }
+    private void HandlePlayLevel()
+    {
+
+    }
+    private void HandleLevelCompleted()
+    {
+
+    }
+    private void HandleGameOver()
+    {
+
+    }
 
 }
 
@@ -57,7 +70,6 @@ public enum GameState
 {
     MainMenu,
     PlayLevel,
-    CompleteLevel,
-    FailLevel,
+    LevelCompleted,
     GameOver
 }
