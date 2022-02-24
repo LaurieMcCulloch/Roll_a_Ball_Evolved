@@ -13,3 +13,9 @@ Followed the Basic [Roll a Ball](https://learn.unity.com/project/roll-a-ball) tu
 6. Detected collisions with colllectables
 7. Display score and text
 8. Build the game
+
+## 23 Feb 2022
+1. Create Game Manager Instance and Game State. 
+Inspired by [Tarodev's excellent example](https://www.youtube.com/watch?v=4I0vonyqMi8)
+2. Seperate Game Manager from Levels
+3. Add Second Level
