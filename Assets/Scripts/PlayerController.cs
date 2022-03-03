@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
-    private Rigidbody rb;
-    private int count;
+    private Rigidbody rb;    
     public GameObject WinTextObject;
 
     private float movementX;
@@ -21,16 +20,25 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        count = 0;
-        SetCountText();
-        WinTextObject.SetActive(false);
+        rb = GetComponent<Rigidbody>();                       
     }
+
+
+    private void GameManagerOnGameStateChanged(GameState state)
+    {
+        // Set Pickup counter at start of level
+        if(state == GameState.PlayLevel)
+        {
+            SetCountText();
+        }
+    }
+
 
     private void OnMove(InputValue movementValue)
     {
@@ -41,24 +49,28 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count : " + count.ToString();
-
-        if (count >= 12)
+        if (GameManager.Instance.State == GameState.PlayLevel)
         {
-            WinTextObject.SetActive(true);
+            countText.text = LevelManager.Instance.CurrentLevel.NumberOfPickupsRemaining.ToString();
         }
     }
+
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        if (GameManager.Instance.State == GameState.PlayLevel)
+        {
+            Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+            rb.AddForce(movement * speed);
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
-            other.gameObject.SetActive(false);
-            count++;
+            other.gameObject.SetActive(false);           
+            
+            LevelManager.Instance.OnPickupCollision(other.gameObject);
             SetCountText();
         }
     }

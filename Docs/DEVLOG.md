@@ -19,3 +19,7 @@ Followed the Basic [Roll a Ball](https://learn.unity.com/project/roll-a-ball) tu
 Inspired by [Tarodev's excellent example](https://www.youtube.com/watch?v=4I0vonyqMi8)
 2. Seperate Game Manager from Levels
 3. Add Second Level
+
+## 3rd March
+1. Level progression logic added
+2. Pickup countdown text code updated
