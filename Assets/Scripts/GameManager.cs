@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.MainMenu);    
     }
 
+    public void StartGame()
+    {
+        LevelManager.Instance.LoadNextLevel();
+    }
+
     public void UpdateGameState(GameState newState)
     {
         State = newState;
