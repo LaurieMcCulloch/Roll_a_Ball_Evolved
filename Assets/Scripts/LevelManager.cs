@@ -16,12 +16,13 @@ public class LevelManager : MonoBehaviour
         Instance = this;
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        Levels = new List<Level>();              
+        Levels = new List<Level>();
         // TODO Load Levels from Disk or Game Overrides
+        //Levels.Add(new Level() { ID = "Assets/Scenes/Levels/Stage_001/Level_001" });
+        //Levels.Add(new Level() { ID = "Assets/Scenes/Levels/Stage_001/Level_002" });
         Levels.Add(new Level() { ID = "Level_001" });
         Levels.Add(new Level() { ID = "Level_002" });
 
-        
     }
     // called when the game is terminated
     void OnDisable()
@@ -40,6 +41,7 @@ public class LevelManager : MonoBehaviour
             string scene = "Scenes/Levels/Stage_001/" + CurrentLevel.ID;
             Debug.Log("Scene : " + scene);
             SceneManager.LoadScene(scene , LoadSceneMode.Additive);
+           // AddressablesManager.Instance.LoadAddressableLevel(CurrentLevel.ID);
         }
     }
 
