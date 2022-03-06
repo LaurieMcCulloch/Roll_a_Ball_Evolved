@@ -8,12 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
-
+   
     public static event Action<GameState> OnGameStateChanged;
 
     void Awake()
     {
-        Instance = this;    
+        Instance = this;
     }
 
     void Start()

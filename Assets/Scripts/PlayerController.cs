@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
         if(state == GameState.PlayLevel)
         {
             SetCountText();
+            rb.isKinematic = false;
+        }else
+        {
+            rb.isKinematic = true;
         }
     }
 
