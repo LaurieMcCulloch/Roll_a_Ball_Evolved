@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         if(state == GameState.PlayLevel)
         {
             SetCountText();
-            rb.isKinematic = false;
+            rb.isKinematic = false; // Ball only rolls around during gameplay
         }else
         {
             rb.isKinematic = true;

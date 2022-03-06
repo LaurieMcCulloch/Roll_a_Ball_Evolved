@@ -37,7 +37,9 @@ public class LevelManager : MonoBehaviour
         if (Levels.Count > 0 ) // TODO change to level loaded successfully check
         {
             CurrentLevel = Levels[CurrentLevelIndex];
-            SceneManager.LoadScene(CurrentLevel.ID, LoadSceneMode.Additive);
+            string scene = "Scenes/Levels/Stage_001/" + CurrentLevel.ID;
+            Debug.Log("Scene : " + scene);
+            SceneManager.LoadScene(scene , LoadSceneMode.Additive);
         }
     }
 
