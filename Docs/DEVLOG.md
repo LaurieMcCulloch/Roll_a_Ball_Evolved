@@ -35,8 +35,10 @@ Added as a staic instance and initialized with the 'development' environment for
 
     1. Started by installing the Addressables package with the Unity Package Manager
     2. Opened the Windows > Asset Management > Addressable Groups window docked it to the top of the UI
-    3. Created a new Packed Assets Group called 'StarterLevels' set it as the Default group and deleted the previously default group
+    3. Created a new Packed Assets Group called 'Stage_001' set it as the Default group and deleted the previously default group
     and dragged the two levels intoa new Group 4. Put the things you want to change after the game has been built into the group, e.g. Level scenes, they will be flagged as addressibles in the Inspector.
+    4. Updated the Load Scene code to load the scene from the Addressable  ```Addressables.LoadSceneAsync(scene, UnityEngine.SceneManagement.LoadSceneMode.Additive, true);``` and removed the 2 scenes from the Build Settings panel.
+    ![Addressable Levels](/Docs/Images/addressable_levels.png)
 
 
 
