@@ -34,7 +34,9 @@ Added as a staic instance and initialized with the 'development' environment for
 * Implement CCD to load levels, based on [YouTube tutorial by Dilmer Valecillos](https://www.youtube.com/watch?v=BXdwcSLWXK4)
 
     1. Started by installing the Addressables package with the Unity Package Manager
-    2. Opened the Addressable Groups window and dragged the two levels intoa new Group called StarterLevel
+    2. Opened the Windows > Asset Management > Addressable Groups window docked it to the top of the UI
+    3. Created a new Packed Assets Group called 'StarterLevels' set it as the Default group and deleted the previously default group
+    and dragged the two levels intoa new Group 4. Put the things you want to change after the game has been built into the group, e.g. Level scenes, they will be flagged as addressibles in the Inspector.
 
 
 

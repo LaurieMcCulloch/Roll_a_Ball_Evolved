@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: StarterLevel
+  m_Name: Stage_001
   m_EditorClassIdentifier: 
-  m_GroupName: StarterLevel
+  m_GroupName: Stage_001
   m_Data:
     m_SerializedData: []
   m_GUID: d047d37e32775426bb5b306bd7d7536b
   m_SerializeEntries:
   - m_GUID: 289d55c99c81f43d3b5d18223b6305db
-    m_Address: Assets/Scenes/Levels/Stage_001/Level_001.unity
+    m_Address: Level_001
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 792c2ea31c043418baec5f40849dea79
-    m_Address: Assets/Scenes/Levels/Stage_001/Level_002.unity
+    m_Address: Level_002
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

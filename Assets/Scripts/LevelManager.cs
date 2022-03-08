@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 
 public class LevelManager : MonoBehaviour
 {
@@ -38,9 +39,10 @@ public class LevelManager : MonoBehaviour
         if (Levels.Count > 0 ) // TODO change to level loaded successfully check
         {
             CurrentLevel = Levels[CurrentLevelIndex];
-            string scene = "Scenes/Levels/Stage_001/" + CurrentLevel.ID;
+            string scene =  CurrentLevel.ID;
             Debug.Log("Scene : " + scene);
-            SceneManager.LoadScene(scene , LoadSceneMode.Additive);
+            //SceneManager.LoadScene(scene , LoadSceneMode.Additive);
+            Addressables.LoadSceneAsync(scene, UnityEngine.SceneManagement.LoadSceneMode.Additive, true);
            // AddressablesManager.Instance.LoadAddressableLevel(CurrentLevel.ID);
         }
     }
