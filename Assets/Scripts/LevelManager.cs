@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
         //Levels.Add(new Level() { ID = "Assets/Scenes/Levels/Stage_001/Level_002" });
         Levels.Add(new Level() { ID = "Level_001" });
         Levels.Add(new Level() { ID = "Level_002" });
+        Levels.Add(new Level() { ID = "Level_003" });
+        Levels.Add(new Level() { ID = "Level_004" });
 
     }
     // called when the game is terminated
