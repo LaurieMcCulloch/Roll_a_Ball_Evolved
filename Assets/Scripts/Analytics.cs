@@ -38,5 +38,7 @@ public class Analytics : MonoBehaviour
             transactionServer = Events.TransactionServer.APPLE,
             transactionReceipt = "ewok9Ja81............991KS=="
         });
+
+        
     }
 }

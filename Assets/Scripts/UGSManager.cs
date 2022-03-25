@@ -4,6 +4,9 @@ using UnityEngine;
 
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
+using Unity.Services.Core.Analytics;
+
+using Unity.Services.Analytics;
 
 public class UGSManager : MonoBehaviour
 {
@@ -16,13 +19,13 @@ public class UGSManager : MonoBehaviour
         Instance = this;
         Analytics = GetComponent<Analytics>();
        
-        // Set UGS Enbironment
+        // Set UGS Environment
         var options = new InitializationOptions();
         options.SetEnvironmentName(Configuration.UGS_ENVIRONMENT);
-
+        options.SetAnalyticsUserId("Laurie");
+        
         // Initialize UGS
-        await UnityServices.InitializeAsync(options);
+        await UnityServices.InitializeAsync(options);        
         
     }
-
 }
