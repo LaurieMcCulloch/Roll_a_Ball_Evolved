@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.MainMenu);    
+        UpdateGameState(GameState.MainMenu);        
     }
 
     public void StartGame()
     {
-        LevelManager.Instance.LoadNextLevel();
+        LevelManager.Instance.LoadLevel();
     }
 
     public void UpdateGameState(GameState newState)

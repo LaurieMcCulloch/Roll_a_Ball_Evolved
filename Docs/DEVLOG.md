@@ -43,5 +43,17 @@ Added as a staic instance and initialized with the 'development' environment for
 
 
 ## Todo
+* Analytics
+* Clod Save for player progress saving
+* Game Overrides for levels
+* Validate class structure
 * Add to Google Play Store
+* Add to Apple Store
+* Add Ads
+* Authentication
 * Gyroscopic ball control
+* Virtual Joystick ball control
+* Gamepad ball control
+* Moving walls
+* critters
+* pinball style bumpers, flippers, light sequences
