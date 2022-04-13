@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.State == GameState.PlayLevel)
         {
-            countText.text = LevelManager.Instance.CurrentLevel.NumberOfPickupsRemaining.ToString();
+            countText.text = LevelManager.Instance.CurrentLevel.PickupsRemaining.ToString();
         }
     }
 

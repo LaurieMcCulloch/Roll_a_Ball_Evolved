@@ -106,7 +106,8 @@ public class LevelManager : MonoBehaviour
 
             // Populate Pickups List
             CurrentLevel.Pickups = new List<GameObject>(GameObject.FindGameObjectsWithTag("PickUp"));
-            CurrentLevel.NumberOfPickupsRemaining = CurrentLevel.Pickups.Count;
+            CurrentLevel.PickupsAtStart = CurrentLevel.Pickups.Count;
+            CurrentLevel.PickupsRemaining = CurrentLevel.Pickups.Count;
 
             // Start Level
             GameManager.Instance.UpdateGameState(GameState.PlayLevel);
@@ -118,21 +119,12 @@ public class LevelManager : MonoBehaviour
     public void OnPickupCollision(GameObject pickUp)
     {
         // Remove pickup and decrement counter
-        CurrentLevel.NumberOfPickupsRemaining--;
+        CurrentLevel.PickupsRemaining--;
         CurrentLevel.Pickups.Remove(pickUp);
 
         // If Pickups all collected
-        if (CurrentLevel.NumberOfPickupsRemaining == 0)
+        if (CurrentLevel.PickupsRemaining == 0)
         {
-            // Next Level
-            CurrentLevelIndex++;
-
-            // Reset to beginnning is all levels completed
-            if (CurrentLevelIndex >= Levels.Count)
-            {
-                CurrentLevelIndex = 0;
-            }
-
             GameManager.Instance.UpdateGameState(GameState.LevelCompleted);
         }
     }
@@ -142,6 +134,6 @@ public class Level
 {
     public string ID { get; set; }
     public List<GameObject> Pickups;
-    public int NumberOfPickupsRemaining; 
-          
+    public int PickupsAtStart;
+    public int PickupsRemaining;         
 }

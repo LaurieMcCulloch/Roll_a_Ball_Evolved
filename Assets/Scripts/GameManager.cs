@@ -62,6 +62,22 @@ public class GameManager : MonoBehaviour
     }
     private void HandleLevelCompleted()
     {
+        // Record levelCompleted Analytics event
+        UGSManager.Analytics.RecordEvent_levelCompleted(
+            LevelManager.Instance.CurrentLevelIndex,
+            LevelManager.Instance.Levels[LevelManager.Instance.CurrentLevelIndex],
+            LevelManager.Instance.CurrentLevel);
+
+
+
+        // Next Level
+        LevelManager.Instance.CurrentLevelIndex++;
+
+        // Reset to beginnning is all levels completed
+        if (LevelManager.Instance.CurrentLevelIndex >= LevelManager.Instance.Levels.Count)
+        {
+            LevelManager.Instance.CurrentLevelIndex = 0;
+        }
 
     }
     private void HandleGameOver()

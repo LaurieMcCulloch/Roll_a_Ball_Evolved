@@ -5,7 +5,7 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 public class AddressablesManager : MonoBehaviour
-{
+{/*
     public static AddressablesManager Instance;
 
     // Level Loading
@@ -46,5 +46,5 @@ public class AddressablesManager : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }

@@ -7,6 +7,33 @@ using Unity.Services.Analytics;
 public class Analytics : MonoBehaviour
 {
 
+    public void RecordEvent(string eventName, Dictionary<string, object> dictionary)
+    {
+        
+        string eventString = ($"Recording Event {eventName}\n");
+
+        foreach (KeyValuePair<string,object> kv in dictionary)
+        {
+            eventString += ($"- {kv.Key} : {kv.Value.ToString()}\n");
+        }
+        Debug.Log(eventString);
+
+        Events.CustomData(eventName, dictionary);
+
+
+    }
+
+
+    public void RecordEvent_levelCompleted(int levelNumber, Level levelDefinition, Level currentLevel)
+    {
+        Dictionary<string, object> dictionary = new Dictionary<string, object>();
+        dictionary.Add("levelNumber", levelNumber+1); // Don't want this zero indexed in reporting
+        dictionary.Add("levelID", currentLevel.ID);
+        dictionary.Add("pickupsCount", currentLevel.PickupsAtStart);
+
+        UGSManager.Analytics.RecordEvent("levelCompleted", dictionary);
+    }
+
     public void RecordTransactionEvent()
     {
         var productsReceived = new Events.Product()
