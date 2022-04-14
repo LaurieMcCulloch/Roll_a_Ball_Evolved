@@ -5,7 +5,8 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 public class AddressablesManager : MonoBehaviour
-{/*
+{//TODO clean this and the implementation in the Level Manager up, particularly the task handle in the Completed methtod
+    /*
     public static AddressablesManager Instance;
 
     // Level Loading

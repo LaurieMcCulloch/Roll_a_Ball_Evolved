@@ -40,20 +40,52 @@ Added as a staic instance and initialized with the 'development' environment for
     4. Updated the Load Scene code to load the scene from the Addressable  ```Addressables.LoadSceneAsync(scene, UnityEngine.SceneManagement.LoadSceneMode.Additive, true);``` and removed the 2 scenes from the Build Settings panel.
     ![Addressable Levels](/Docs/Images/addressable_levels.png)
 
+## 12th April 
+* Cleaned up some level loading stuff
+* Added UGS Analytics and levelCompleted event.
+* The next thing to try is to make the ball more lively, more like a pinblall or table tennis ball. Quicker to react to player inputs and potentially flippers and speed boosters. 
+The currect settings on the player ball are:
+  - Mass : 1 
+  - Drag : 0 
+  - Angular Drag : 0.05
+  - Gravity : true
+  - Kinematic : true
+  - Interpolate : None
+  - Collision Detection : Discrete
 
+  - Player Controller : Speed = 10
+
+Adding a physics material to the player ball 
+- Dynamic Friction : 0.2
+- Static Friction : 0.6
+- Bouncyness : 0.5
+- Friction Combine : Average
+- Bounce Combine : Maximum
+And updated the Rigid Body settings on the player ball to 
+  - Mass : 50 
+  - Drag : 0.05 
+  - Angular Drag : 0.01
+  - Gravity : true
+  - Kinematic : true
+  - Interpolate : None
+  - Collision Detection : Discrete
+
+    - Player Controller : Speed = 1000
+
+Now the ball is much more frisky, can bounce and jump, but has enough mass to to go too high. A glass table top will likely be needed to stop the ball escaping though.
 
 ## Todo
-* Analytics
-* Clod Save for player progress saving
-* Game Overrides for levels
-* Validate class structure
-* Add to Google Play Store
-* Add to Apple Store
-* Add Ads
-* Authentication
-* Gyroscopic ball control
-* Virtual Joystick ball control
-* Gamepad ball control
-* Moving walls
-* critters
-* pinball style bumpers, flippers, light sequences
+- [x] Analytics
+- [ ] Cloud Save for player progress saving
+- [ ] Game Overrides for levels
+- [ ] Validate class structure
+- [ ] Add to Google Play Store
+- [ ] Add to Apple Store
+- [ ] Add Ads
+- [ ] Authentication
+- [ ] Gyroscopic ball control
+- [ ] Virtual Joystick ball control
+- [ ] Gamepad ball control
+- [ ] Moving walls
+- [ ] critters
+- [ ] pinball style bumpers, flippers, light sequences
