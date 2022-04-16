@@ -19,6 +19,13 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
+
+        if (SceneManager.GetActiveScene().name != "MiniGame")
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            SceneManager.LoadSceneAsync("MiniGame");
+        }
+
         Instance = this;
         SceneManager.sceneLoaded += OnSceneLoaded;        
 

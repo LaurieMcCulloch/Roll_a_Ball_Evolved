@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
         {
             SetCountText();
             rb.isKinematic = false; // Ball only rolls around during gameplay
-        }else
+        }
+        else
         {
             rb.isKinematic = true;
         }
@@ -50,7 +51,11 @@ public class PlayerController : MonoBehaviour
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
-
+    private void Fire(InputAction.CallbackContext context)
+    {
+        Debug.Log("Fire");
+        //https://www.youtube.com/watch?v=y7WgV8-yfcI&t=136s
+    }
     void SetCountText()
     {
         if (GameManager.Instance.State == GameState.PlayLevel)

@@ -1242,9 +1242,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530811006}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 1
-  m_AngularDrag: 0.05
+  m_Mass: 1
+  m_Drag: 0.055
+  m_AngularDrag: 0.01
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinTextObject: {fileID: 1089795795}
-  speed: 100
+  speed: 20
   countText: {fileID: 1592902704}
 --- !u!114 &530811013
 MonoBehaviour:
