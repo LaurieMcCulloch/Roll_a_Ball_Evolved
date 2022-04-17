@@ -5,8 +5,31 @@ using UnityEngine;
 
 public class Flipper : MonoBehaviour
 {
-    public float restPosition = 0f;
-    public float pressedPosition = 45f;
+    public float restRotation = 45.0f;
+    public float pressedRotation = -20.0f;
+    public float speed = 100f; 
+
+    void Start()
+    {
+        transform.rotation = Quaternion.Euler(new Vector3(0f, restRotation, 0f));
+
+    }
+
+    void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Debug.Log("Boing");
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0f, restRotation, 0f)));
+        }
+        else
+        {
+           // transform.rotation = Quaternion.Euler(new Vector3(0f, pressedRotation, 0f));
+        }
+    }
+    /*
+    public float restPosition = -55f;
+    public float pressedPosition = 55f;
     public float hitStrength = 10000f;
     public float flipperDamper = 150f;
 
@@ -38,5 +61,6 @@ public class Flipper : MonoBehaviour
         hingeJoint.spring = jointSpring;
         hingeJoint.useLimits = true;
 
-    }
+    }*/
+
 }
