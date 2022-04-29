@@ -74,6 +74,18 @@ And updated the Rigid Body settings on the player ball to
 
 Now the ball is much more frisky, can bounce and jump, but has enough mass to to go too high. A glass table top will likely be needed to stop the ball escaping though.
 
+## 29 April
+Having proved remote level loading with CCD and addressables, it has been parked on the ``ccd-levels`` branch for now so I can focus on some other services and mechanics. 
+
+The next things I want to look at is :
+- Built in level editor
+- Some more mechanics (critters, flippers, warp tiles)
+- Tasks and objectives
+- User Generated content
+- Then maybe back to CCD, but not for scene loading like before, perhaps for swithcing in and out the UGS store (or store pages) 
+
+creating ```level-editor``` branch for this
+
 ## Todo
 - [x] Analytics
 - [ ] Cloud Save for player progress saving
