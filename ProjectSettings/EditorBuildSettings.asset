@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame.unity
     guid: 92341db80249b554eafa47dbccf04fde
+  - enabled: 1
+    path: Assets/Scenes/Levels/Stage_001/Level_001.unity
+    guid: 289d55c99c81f43d3b5d18223b6305db
+  - enabled: 1
+    path: Assets/Scenes/Levels/Stage_001/Level_002.unity
+    guid: 792c2ea31c043418baec5f40849dea79
+  - enabled: 1
+    path: Assets/Scenes/Levels/Stage_002/Level_003.unity
+    guid: 591726417945848a4bd55ec5d4f092c7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Stage_002/Level_004.unity
+    guid: 0169fcdd6c1454182bda4094ebf5d2b3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8ce1a95351dfe4d2293d750eb54eea49,
       type: 2}

@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
+//using UnityEngine.AddressableAssets;
+//using UnityEngine.ResourceManagement.AsyncOperations;
+//using UnityEngine.ResourceManagement.ResourceProviders;
 
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-    private SceneInstance LoadedScene;  // Reference to loaded scene used for unloading
+    //private SceneInstance LoadedScene;  // Reference to loaded scene used for unloading
+    private Scene LoadedScene;
 
     [SerializeField] public int CurrentLevelIndex = 0 ;
     [SerializeField] public List<Level> Levels;
@@ -62,17 +63,19 @@ public class LevelManager : MonoBehaviour
         // Unload the previous level
         if (CurrentLevel != null )
         {
-            Addressables.UnloadSceneAsync(LoadedScene, true).Completed += OnSceneUnloaded;
-            LoadedScene = new SceneInstance();
+            //Addressables.UnloadSceneAsync(LoadedScene, true).Completed += OnSceneUnloaded;
+            SceneManager.UnloadSceneAsync(LoadedScene);
+            LoadedScene = new Scene(); // new SceneInstance();
         }
            
         // Load new level
         CurrentLevel = Levels[level];
-        Addressables.LoadSceneAsync(CurrentLevel.ID, LoadSceneMode.Additive, true).Completed += OnSceneLoaded ;
-           
+        //Addressables.LoadSceneAsync(CurrentLevel.ID, LoadSceneMode.Additive, true).Completed += OnSceneLoaded ;
+        SceneManager.LoadScene(CurrentLevel.ID, LoadSceneMode.Additive);
+        //LoadedScene = SceneManager.GetActiveScene();
     }
 
-
+    /*
     void OnSceneLoaded(AsyncOperationHandle<SceneInstance> obj)
     {
         if (obj.Status == AsyncOperationStatus.Succeeded)
@@ -85,8 +88,8 @@ public class LevelManager : MonoBehaviour
         }
 
     }
-
-
+    */
+    /*
    void OnSceneUnloaded(AsyncOperationHandle<SceneInstance> obj)
     {
         if (obj.Status == AsyncOperationStatus.Succeeded)
@@ -98,12 +101,12 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("Failed to unload scene ");
         }
     }
-
+    */
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-
+        LoadedScene = scene;
         // If a Level has just been loaded
         if (CurrentLevel != null && scene.name == CurrentLevel.ID)
         {
