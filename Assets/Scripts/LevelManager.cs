@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance;
     //private SceneInstance LoadedScene;  // Reference to loaded scene used for unloading
     private Scene LoadedScene;
+    [SerializeField] private GameObject LevelDataObject;
+    [SerializeField] private LevelData levelData;
 
     [SerializeField] public int CurrentLevelIndex = 0 ;
     [SerializeField] public List<Level> Levels;
@@ -30,6 +32,8 @@ public class LevelManager : MonoBehaviour
         Instance = this;
         SceneManager.sceneLoaded += OnSceneLoaded;        
 
+
+
         Levels = new List<Level>();
         // TODO Load Levels from Disk or Game Overrides
         Levels.Add(new Level() { ID = "Level_001" });
@@ -38,6 +42,15 @@ public class LevelManager : MonoBehaviour
         Levels.Add(new Level() { ID = "Level_004" });
 
     }
+
+    private void Start()
+    {
+        Debug.Log($"{levelData.levelID} " +
+            $"[{levelData.staticElements.Length}" +
+            $"-{levelData.interactableElements.Length}" +
+            $"-{levelData.enemyElements.Count}]");
+    }
+
     // called when the game is terminated
     void OnDisable()
     {
@@ -109,7 +122,7 @@ public class LevelManager : MonoBehaviour
         LoadedScene = scene;
         // If a Level has just been loaded
         if (CurrentLevel != null && scene.name == CurrentLevel.ID)
-        {
+        {           
             // Move player to start position 
             GameObject player = GameObject.Find("Player Start");
             PlayerController.Instance.transform.SetPositionAndRotation(player ? player.transform.position : new Vector3(0f, 0.5f, 0f), Quaternion.identity);
