@@ -16,4 +16,6 @@ MonoBehaviour:
   staticElements:
   - {fileID: 11400000, guid: a5e254778fae441b69a457e6bd9cf9eb, type: 2}
   interactableElements: []
-  enemyElements: []
+  enemyElements:
+  - {fileID: 11400000, guid: a5e254778fae441b69a457e6bd9cf9eb, type: 2}
+  - {fileID: 11400000, guid: a5e254778fae441b69a457e6bd9cf9eb, type: 2}
